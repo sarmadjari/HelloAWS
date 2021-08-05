@@ -10,7 +10,7 @@
         "secretOptions": null,
         "options": {
           "awslogs-group": "/ecs/first-run-task-definition",
-          "awslogs-region": "eu-north-1",
+          "awslogs-region": "eu-central-1",
           "awslogs-stream-prefix": "ecs"
         }
       },
@@ -20,13 +20,13 @@
       ],
       "portMappings": [
         {
-          "hostPort": 80,
+          "hostPort": 5000,
           "protocol": "tcp",
-          "containerPort": 80
+          "containerPort": 5000
         }
       ],
       "command": [
-        "/bin/sh -c \"echo '<html> <head> <title>Amazon ECS Sample App</title> <style>body {margin-top: 40px; background-color: #333;} </style> </head><body> <div style=color:white;text-align:center> <h1>Amazon ECS Sample App</h1> <h2>Congratulations!</h2> <p>Your application is now running on a container in Amazon ECS.</p> </div></body></html>' >  /usr/local/apache2/htdocs/index.html && httpd-foreground\""
+        ""
       ],
       "linuxParameters": null,
       "cpu": 256,
@@ -42,7 +42,7 @@
       "memoryReservation": 512,
       "volumesFrom": [],
       "stopTimeout": null,
-      "image": "httpd:2.4",
+      "image": "214444164561.dkr.ecr.eu-central-1.amazonaws.com/helloaws:78948719afb0502971d69f20b39696daa97bd36e",
       "startTimeout": null,
       "firelensConfiguration": null,
       "dependsOn": null,
@@ -59,7 +59,7 @@
       "dockerLabels": null,
       "systemControls": null,
       "privileged": null,
-      "name": "sample-app"
+      "name": "HelloAWS"
     }
   ],
   "placementConstraints": [],
@@ -69,7 +69,7 @@
     "EC2",
     "FARGATE"
   ],
-  "taskDefinitionArn": "arn:aws:ecs:eu-north-1:214444164561:task-definition/first-run-task-definition:1",
+  "taskDefinitionArn": "arn:aws:ecs:eu-central-1:214444164561:task-definition/first-run-task-definition:1",
   "family": "first-run-task-definition",
   "requiresAttributes": [
     {
